@@ -1,0 +1,15 @@
+﻿@model List<ToDoListApp2.Models.TaskTodo>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+    <ul>
+@foreach (var task in Model)
+{
+    if ((task.DueDate - DateTime.Now).TotalDays < 5)
+    {
+        <li>@task.Content - Coming soon!</li>
+    }
+}
+</ul>
